@@ -1,0 +1,28 @@
+﻿<Project>
+  <PropertyGroup>
+    <VersionPrefix>0.0.1</VersionPrefix>
+    <Authors>bitc0der</Authors>
+    <Copyright>Copyright 2024 © bitc0der</Copyright>
+    <Company>bitc0der</Company>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>False</PackageRequireLicenseAcceptance>
+    <PackageProjectUrl>https://github.com/bitc0der/BitSoft.AsyncTools</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/bitc0der/BitSoft.AsyncTools</RepositoryUrl>
+
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)AsyncTools.snk</AssemblyOriginatorKeyFile>
+    <SignAssembly>true</SignAssembly>
+
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <AnalysisLevel>latest</AnalysisLevel>
+
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <CodeAnalysisTreatWarningsAsErrors>true</CodeAnalysisTreatWarningsAsErrors>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+  </PropertyGroup>
+</Project>

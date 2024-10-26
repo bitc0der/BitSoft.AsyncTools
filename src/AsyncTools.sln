@@ -8,7 +8,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6F3E598-A5A6-4918-9A90-96C8A878D5D8}"
 	ProjectSection(SolutionItems) = preProject
 		..\Directory.Build.props = ..\Directory.Build.props
+		..\Directory.Packages.props = ..\Directory.Packages.props
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTools.Tests", "AsyncTools.Tests\AsyncTools.Tests.csproj", "{5891102B-8EC9-441D-81F5-D68358D869D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +23,10 @@ Global
 		{C756061B-6E3C-454A-92CE-E64D2B5A8DE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C756061B-6E3C-454A-92CE-E64D2B5A8DE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C756061B-6E3C-454A-92CE-E64D2B5A8DE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5891102B-8EC9-441D-81F5-D68358D869D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5891102B-8EC9-441D-81F5-D68358D869D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5891102B-8EC9-441D-81F5-D68358D869D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5891102B-8EC9-441D-81F5-D68358D869D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

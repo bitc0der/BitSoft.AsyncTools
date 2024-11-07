@@ -31,7 +31,6 @@ public static class WaitHandleExtensions
 				}
 				else
 					throw new InvalidOperationException();
-
 			},
 			state: tcs,
 			millisecondsTimeOutInterval: Timeout.Infinite,

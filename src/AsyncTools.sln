@@ -3,15 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTools", "AsyncTools\AsyncTools.csproj", "{C756061B-6E3C-454A-92CE-E64D2B5A8DE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncTools", "AsyncTools\AsyncTools.csproj", "{C756061B-6E3C-454A-92CE-E64D2B5A8DE7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F6F3E598-A5A6-4918-9A90-96C8A878D5D8}"
 	ProjectSection(SolutionItems) = preProject
 		..\Directory.Build.props = ..\Directory.Build.props
 		..\Directory.Packages.props = ..\Directory.Packages.props
+		..\.github\workflows\dotnet.yml = ..\.github\workflows\dotnet.yml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncTools.Tests", "AsyncTools.Tests\AsyncTools.Tests.csproj", "{5891102B-8EC9-441D-81F5-D68358D869D5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AsyncTools.Tests", "AsyncTools.Tests\AsyncTools.Tests.csproj", "{5891102B-8EC9-441D-81F5-D68358D869D5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

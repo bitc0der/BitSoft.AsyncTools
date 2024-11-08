@@ -8,6 +8,24 @@ namespace AsyncTools.Tests;
 public sealed class WaitHandleExtensionsTests
 {
 	[Test]
+	public void Should_CompleteTask_When_HandlerIsSet()
+	{
+		// Arrange
+		using var handler = new ManualResetEvent(initialState: false);
+		using var cts = new CancellationTokenSource();
+
+		var task = handler.WaitAsync(cancellationToken: cts.Token);
+
+		// Act
+		handler.Set();
+
+		// Assert
+		Assert.DoesNotThrowAsync(() => task);
+		Assert.That(task.IsCompleted, Is.True);
+		Assert.That(task.IsCanceled, Is.False);
+	}
+
+	[Test]
 	public void Should_CancelTask_When_CancellationTokenSourceIsCancelled()
 	{
 		// Arrange

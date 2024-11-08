@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace AsyncTools.Tests;
@@ -23,12 +24,22 @@ public sealed class WaitHandleExtensionsTests
 	}
 
 	[Test]
-	public void Should_ThrowTaskCancelledException_When_TimeoutExceeded()
+	public void Should_ThrowTaskCancelledException_When_TimeoutMsExceeded()
 	{
 		// Arrange
 		using var handler = new ManualResetEvent(initialState: false);
 
 		// Act & Assert
 		Assert.ThrowsAsync<TaskCanceledException>(async () => await handler.WaitAsync(timeoutMs: 5));
+	}
+
+	[Test]
+	public void Should_ThrowTaskCancelledException_When_TimeoutExceeded()
+	{
+		// Arrange
+		using var handler = new ManualResetEvent(initialState: false);
+
+		// Act & Assert
+		Assert.ThrowsAsync<TaskCanceledException>(async () => await handler.WaitAsync(timeout: TimeSpan.FromMilliseconds(5)));
 	}
 }

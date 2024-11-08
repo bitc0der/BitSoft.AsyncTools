@@ -1,5 +1,5 @@
 # BitSoft.AsyncTools
-[![build](https://github.com/bitc0der/BitSoft.AsyncTools/actions/workflows/dotnet.yml/badge.svg)](https://github.com/bitc0der/BitSoft.AsyncTools/actions/workflows/dotnet.yml)
+[![build](https://github.com/bitc0der/BitSoft.AsyncTools/actions/workflows/build.yml/badge.svg)](https://github.com/bitc0der/BitSoft.AsyncTools/actions/workflows/build.yml)
 
 ## `WaitAsync` for `WaitHandler`
 You can use async await for `WaitHandler`. For example:

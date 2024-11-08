@@ -21,8 +21,31 @@ public sealed class WaitHandleExtensionsTests
 
 		// Assert
 		Assert.DoesNotThrowAsync(() => task);
-		Assert.That(task.IsCompleted, Is.True);
-		Assert.That(task.IsCanceled, Is.False);
+		Assert.Multiple(() =>
+		{
+			Assert.That(task.IsCompleted, Is.True);
+			Assert.That(task.IsCanceled, Is.False);
+		});
+	}
+
+	[Test]
+	public void Should_CompleteTask_When_HandlerIsSetWithoutToken()
+	{
+		// Arrange
+		using var handler = new ManualResetEvent(initialState: false);
+
+		var task = handler.WaitAsync();
+
+		// Act
+		handler.Set();
+
+		// Assert
+		Assert.DoesNotThrowAsync(() => task);
+		Assert.Multiple(() =>
+		{
+			Assert.That(task.IsCompleted, Is.True);
+			Assert.That(task.IsCanceled, Is.False);
+		});
 	}
 
 	[Test]

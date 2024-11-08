@@ -54,11 +54,14 @@ public static class WaitHandleExtensions
 			executeOnlyOnce: true
 		);
 
-		tcs.Task.ContinueWith(result =>
-		{
-			rwh.Unregister(null);
-			return ctr.Unregister();
-		});
+		tcs.Task.ContinueWith(
+			continuationFunction: result =>
+			{
+				rwh.Unregister(null);
+				return !ctr.Token.CanBeCanceled || ctr.Unregister();
+			},
+			continuationOptions: TaskContinuationOptions.ExecuteSynchronously
+		);
 
 		return tcs.Task;
 	}

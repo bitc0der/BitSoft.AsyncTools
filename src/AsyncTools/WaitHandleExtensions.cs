@@ -58,7 +58,7 @@ public static class WaitHandleExtensions
 			continuationFunction: result =>
 			{
 				rwh.Unregister(null);
-				return !ctr.Token.CanBeCanceled || ctr.Unregister();
+				return !cancellationToken.CanBeCanceled || ctr.Unregister();
 			},
 			continuationOptions: TaskContinuationOptions.ExecuteSynchronously
 		);

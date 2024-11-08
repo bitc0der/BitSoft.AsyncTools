@@ -1,12 +1,29 @@
-﻿using System.Threading.Tasks;
+﻿using System;
 using System.Threading;
-using System;
+using System.Threading.Tasks;
 
 namespace AsyncTools;
 
 public static class WaitHandleExtensions
 {
-	public static Task WaitAsync(this WaitHandle handle, CancellationToken cancellationToken = default)
+	public static Task WaitAsync(
+		this WaitHandle handle,
+		TimeSpan timeout,
+		CancellationToken cancellationToken = default)
+	{
+		ArgumentNullException.ThrowIfNull(handle);
+
+		return WaitAsync(
+			handle: handle,
+			timeoutMs: Convert.ToInt32(timeout.TotalMilliseconds),
+			cancellationToken: cancellationToken
+		);
+	}
+
+	public static Task WaitAsync(
+		this WaitHandle handle,
+		int timeoutMs = Timeout.Infinite,
+		CancellationToken cancellationToken = default)
 	{
 		ArgumentNullException.ThrowIfNull(handle);
 
@@ -33,7 +50,7 @@ public static class WaitHandleExtensions
 					throw new InvalidOperationException();
 			},
 			state: tcs,
-			millisecondsTimeOutInterval: Timeout.Infinite,
+			millisecondsTimeOutInterval: timeoutMs,
 			executeOnlyOnce: true
 		);
 

@@ -2,6 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8</TargetFramework>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
 </Project>
